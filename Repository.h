@@ -12,19 +12,16 @@ class Repository
 private:
     bool initialized;
     vector<Commit> commits;
-        int nextCommitId;
+    int nextCommitId;
 
 public:
     Repository();
-
     void init();
-
     bool isInitialized() const;
-
     void addCommit(const Commit& commit);
-
     int getCommitCount() const;
     int generateCommitId();
+    Commit createCommit(int parentId, const string& message,const string& author,const string& timestamp);
 };
 
 #endif
