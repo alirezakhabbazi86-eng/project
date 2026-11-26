@@ -1,12 +1,12 @@
-#include <iostreem>
-#include "UserConfig_h"
+#include <iostream>
+#include "UserCofing.h"
 
 int main()
 {
     UserConfig user;
 
     user.setUserName("melika");
-    User.setUserEmail("melika@gmail.com");
+    user.setUserEmail("melika@gmail.com");
 
     std::cout << user.getUserName() << std::endl;
     std::cout << user.getUserEmail() << std::endl;

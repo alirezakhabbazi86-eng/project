@@ -2,15 +2,15 @@
 #define COFINGCOMMAND_H
 
 #include <string> 
-#include "UserConfig.h"
+#include "UserCofing.h"
 
 class CONFIGCOMMAND
 {
     private:
-    UserConfug& userConfig;
+    UserConfig& userConfig;
 
     public:
-    ConfigeCommand(UserConfig& config);
+    int ConfigeCommand(UserConfig& config);
      
     void execute (const std::string& key,
     const std::string& value);

@@ -7,7 +7,7 @@ class UserConfig
 {
     private:
     std :: string userName;
-    std :: strinf userEmail;
+    std :: string userEmail;
 
     public:
     UserConfig();
@@ -17,5 +17,5 @@ class UserConfig
     
     std :: string getUserName() const;
     std :: string getUserEmail() const;
-}
+};
 #endif 

@@ -1,6 +1,6 @@
-#include "UserConfig.h"
+#include "UserCofing.h"
 
-UserCofig::UserCofig()
+UserConfig ::UserConfig ()
 {
     userName = "";
     userEmail = "";
@@ -18,7 +18,7 @@ std::string UserConfig::getUserName() const
 {
     return userName;
 }
-std::string UserCofing::getUserEmail() const
+std::string UserConfig ::getUserEmail() const
 {
     return userEmail;
 }
