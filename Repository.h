@@ -15,7 +15,6 @@ private:
     int nextCommitId;
     vector<Branch>branches;
     bool branchExists(const string& name) const;
-    Branch* getBranchByName(const string& name);
     string currentBranch;
 
 public:
@@ -30,6 +29,7 @@ public:
     const Commit* getLastCommit() const;
    void createBranch(const string& name);
    void listBranches() const;
+       Branch* getBranchByName(const string& name);
    bool setCurrentBranch(const string& name);
    string getCurrentBranch() const;
 };

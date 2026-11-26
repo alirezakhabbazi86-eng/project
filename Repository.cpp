@@ -33,13 +33,20 @@ int Repository::generateCommitId()
 {
     return nextCommitId++;
 }
-Commit Repository::createCommit(int parentId,const string& message,const string& author,const string& timestamp)
+Commit Repository::createCommit(int parentId, const string& message, const string& author, const string& timestamp)
 {
     int id = generateCommitId();
 
     Commit commit(id, parentId, message, author, timestamp);
 
     commits.push_back(commit);
+
+    Branch* branch = getBranchByName(currentBranch);
+
+    if (branch != nullptr)
+    {
+        branch->setCommitId(id);
+    }
 
     return commit;
 }
