@@ -53,3 +53,12 @@ const Commit* Repository::getCommitById(int id) const
 
     return nullptr;
 }
+const Commit* Repository::getLastCommit() const
+{
+    if (commits.empty())
+    {
+        return nullptr;
+    }
+
+    return &commits.back();
+}

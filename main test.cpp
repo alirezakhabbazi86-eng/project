@@ -11,18 +11,18 @@ int main()
 
     repo.createCommit(-1, "First commit", "Ali", "2026-11-26");
     repo.createCommit(1, "Second commit", "Ali", "2026-11-26");
+    repo.createCommit(2, "Third commit", "Ali", "2026-11-26");
 
-    const Commit* result = repo.getCommitById(2);
+    const Commit* last = repo.getLastCommit();
 
-    if (result != nullptr)
+    if (last != nullptr)
     {
-        cout << "Commit found!" << endl;
-        cout << "ID: " << result->getId() << endl;
-        cout << "Message: " << result->getMessage() << endl;
+        cout << "Last Commit ID: " << last->getId() << endl;
+        cout << "Message: " << last->getMessage() << endl;
     }
     else
     {
-        cout << "Commit not found!" << endl;
+        cout << "No commits found!" << endl;
     }
 
     return 0;
