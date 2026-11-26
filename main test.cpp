@@ -16,20 +16,8 @@ int main()
 
     if (repo.setCurrentBranch("dev"))
     {
-        cout << "Branch switched successfully!" << endl;
-    }
-    else
-    {
-        cout << "Branch not found!" << endl;
-    }
-
-    if (repo.setCurrentBranch("test"))
-    {
-        cout << "Branch switched successfully!" << endl;
-    }
-    else
-    {
-        cout << "Branch not found!" << endl;
+        cout << "Current branch: "
+             << repo.getCurrentBranch() << endl;
     }
 
     return 0;

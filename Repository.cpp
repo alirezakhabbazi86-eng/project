@@ -134,3 +134,7 @@ bool Repository::setCurrentBranch(const string& name)
 
 
 }
+string Repository::getCurrentBranch() const
+{
+    return currentBranch;
+}

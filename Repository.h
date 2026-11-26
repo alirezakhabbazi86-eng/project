@@ -31,6 +31,7 @@ public:
    void createBranch(const string& name);
    void listBranches() const;
    bool setCurrentBranch(const string& name);
+   string getCurrentBranch() const;
 };
 
 #endif
