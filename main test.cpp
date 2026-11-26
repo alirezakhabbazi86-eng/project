@@ -1,29 +1,19 @@
 #include <iostream>
-#include "Repository.h"
+#include "Branch.h"
 
 using namespace std;
 
 int main()
 {
-    Repository repo;
+    Branch branch("main", 1);
 
-    repo.init();
+    cout << "Branch Name: " << branch.getName() << endl;
+    cout << "Commit ID: " << branch.getCommitId() << endl;
 
-    repo.createCommit(-1, "First commit", "Ali", "2026-11-26");
-    repo.createCommit(1, "Second commit", "Ali", "2026-11-26");
-    repo.createCommit(2, "Third commit", "Ali", "2026-11-26");
+    branch.setCommitId(2);
 
-    const Commit* last = repo.getLastCommit();
-
-    if (last != nullptr)
-    {
-        cout << "Last Commit ID: " << last->getId() << endl;
-        cout << "Message: " << last->getMessage() << endl;
-    }
-    else
-    {
-        cout << "No commits found!" << endl;
-    }
+    cout << "\nAfter update:" << endl;
+    cout << "Commit ID: " << branch.getCommitId() << endl;
 
     return 0;
 }
