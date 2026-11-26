@@ -4,7 +4,7 @@
 
 #include <vector>
 #include "Commit.h"
-
+#include "Branch.h"
 using namespace std;
 
 class Repository
@@ -13,6 +13,7 @@ private:
     bool initialized;
     vector<Commit> commits;
     int nextCommitId;
+    vector<Branch>branches;
 
 public:
     Repository();
@@ -24,6 +25,7 @@ public:
     Commit createCommit(int parentId, const string& message,const string& author,const string& timestamp);
     const Commit* getCommitById(int id) const;
     const Commit* getLastCommit() const;
+   void createBranch(const string& name);
 };
 
 #endif

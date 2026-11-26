@@ -62,3 +62,18 @@ const Commit* Repository::getLastCommit() const
 
     return &commits.back();
 }
+void Repository::createBranch(const string& name)
+{
+    const Commit* lastCommit = getLastCommit();
+
+    int commitId = -1;
+
+    if (lastCommit != nullptr)
+    {
+        commitId = lastCommit->getId();
+    }
+
+    Branch branch(name, commitId);
+
+    branches.push_back(branch);
+}

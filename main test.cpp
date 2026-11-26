@@ -1,19 +1,20 @@
 #include <iostream>
-#include "Branch.h"
+#include "Repository.h"
 
 using namespace std;
 
 int main()
 {
-    Branch branch("main", 1);
+    Repository repo;
 
-    cout << "Branch Name: " << branch.getName() << endl;
-    cout << "Commit ID: " << branch.getCommitId() << endl;
+    repo.init();
 
-    branch.setCommitId(2);
+    repo.createCommit(-1, "First commit", "Ali", "2026-11-26");
+    repo.createCommit(1, "Second commit", "Ali", "2026-11-26");
 
-    cout << "\nAfter update:" << endl;
-    cout << "Commit ID: " << branch.getCommitId() << endl;
+    repo.createBranch("main");
+
+    cout << "Branch created successfully!" << endl;
 
     return 0;
 }
