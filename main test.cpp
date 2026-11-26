@@ -13,9 +13,24 @@ int main()
 
     repo.createBranch("main");
     repo.createBranch("dev");
-    repo.createBranch("student-1");
 
-    repo.listBranches();
+    if (repo.setCurrentBranch("dev"))
+    {
+        cout << "Branch switched successfully!" << endl;
+    }
+    else
+    {
+        cout << "Branch not found!" << endl;
+    }
+
+    if (repo.setCurrentBranch("test"))
+    {
+        cout << "Branch switched successfully!" << endl;
+    }
+    else
+    {
+        cout << "Branch not found!" << endl;
+    }
 
     return 0;
 }

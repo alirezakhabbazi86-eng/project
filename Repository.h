@@ -16,6 +16,7 @@ private:
     vector<Branch>branches;
     bool branchExists(const string& name) const;
     Branch* getBranchByName(const string& name);
+    string currentBranch;
 
 public:
     Repository();
@@ -29,6 +30,7 @@ public:
     const Commit* getLastCommit() const;
    void createBranch(const string& name);
    void listBranches() const;
+   bool setCurrentBranch(const string& name);
 };
 
 #endif

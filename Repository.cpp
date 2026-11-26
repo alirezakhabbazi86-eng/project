@@ -6,6 +6,7 @@ Repository::Repository()
 {
     initialized = false;
     nextCommitId = 1;
+    currentBranch="";
 }
 
 void Repository::init()
@@ -118,4 +119,18 @@ void Repository::listBranches() const
     {
         cout << branch.getName()<< "    Commit ID: "<< branch.getCommitId() << endl;
     }
+}
+bool Repository::setCurrentBranch(const string& name)
+{
+    if (!branchExists(name))
+    {
+        return false;
+    }
+
+    currentBranch = name;
+
+    return true;
+
+
+
 }
