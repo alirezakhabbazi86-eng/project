@@ -4,6 +4,7 @@
 Repository::Repository()
 {
     initialized = false;
+    nextCommitId = 1;
 }
 
 void Repository::init()
@@ -24,4 +25,9 @@ void Repository::addCommit(const Commit& commit)
 int Repository::getCommitCount() const
 {
     return commits.size();
+}
+
+int Repository::generateCommitId()
+{
+    return nextCommitId++;
 }

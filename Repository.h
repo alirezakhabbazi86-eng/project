@@ -12,6 +12,7 @@ class Repository
 private:
     bool initialized;
     vector<Commit> commits;
+        int nextCommitId;
 
 public:
     Repository();
@@ -23,6 +24,7 @@ public:
     void addCommit(const Commit& commit);
 
     int getCommitCount() const;
+    int generateCommitId();
 };
 
 #endif
