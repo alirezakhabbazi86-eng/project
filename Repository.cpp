@@ -1,3 +1,4 @@
+
 #include "Repository.h"
 
 Repository::Repository()
@@ -13,4 +14,14 @@ void Repository::init()
 bool Repository::isInitialized() const
 {
     return initialized;
+}
+
+void Repository::addCommit(const Commit& commit)
+{
+    commits.push_back(commit);
+}
+
+int Repository::getCommitCount() const
+{
+    return commits.size();
 }

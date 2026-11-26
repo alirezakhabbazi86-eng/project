@@ -1,20 +1,29 @@
 
 #include <iostream>
-#include "Commit.h"
+#include "Repository.h"
 
 using namespace std;
 
 int main()
 {
-    Commit commit(1, -1, "First commit",
-                  "melika",
-                  "2026-11-25");
+    Repository repo;
 
-    cout << "Commit ID: " << commit.getId() << endl;
-    cout << "Parent ID: " << commit.getParentId() << endl;
-    cout << "Message: " << commit.getMessage() << endl;
-    cout << "Author: " << commit.getAuthor() << endl;
-    cout << "Timestamp: " << commit.getTimestamp() << endl;
+    repo.init();
+
+    Commit commit1(1, -1, "First commit",
+                   "melika", "2026-11-26");
+
+    Commit commit2(2, 1, "Second commit",
+                   "melika", "2026-11-26");
+
+    repo.addCommit(commit1);
+    repo.addCommit(commit2);
+
+    cout << "Repository initialized: "
+         << repo.isInitialized() << endl;
+
+    cout << "Commit count: "
+         << repo.getCommitCount() << endl;
 
     return 0;
 }
