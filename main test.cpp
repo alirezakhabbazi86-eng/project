@@ -9,16 +9,21 @@ int main()
 
     repo.init();
 
-    Commit commit1 = repo.createCommit(
-        -1, "First commit", "melika", "2026-11-26");
+    repo.createCommit(-1, "First commit", "Ali", "2026-11-26");
+    repo.createCommit(1, "Second commit", "Ali", "2026-11-26");
 
-    Commit commit2 = repo.createCommit(
-        commit1.getId(), "Second commit", "melika", "2026-11-26");
+    const Commit* result = repo.getCommitById(2);
 
-    cout << "First Commit ID: " << commit1.getId() << endl;
-    cout << "Second Commit ID: " << commit2.getId() << endl;
-
-    cout << "Commit count: " << repo.getCommitCount() << endl;
+    if (result != nullptr)
+    {
+        cout << "Commit found!" << endl;
+        cout << "ID: " << result->getId() << endl;
+        cout << "Message: " << result->getMessage() << endl;
+    }
+    else
+    {
+        cout << "Commit not found!" << endl;
+    }
 
     return 0;
 }

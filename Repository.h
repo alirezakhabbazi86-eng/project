@@ -22,6 +22,7 @@ public:
     int getCommitCount() const;
     int generateCommitId();
     Commit createCommit(int parentId, const string& message,const string& author,const string& timestamp);
+    const Commit* getCommitById(int id) const;
 };
 
 #endif

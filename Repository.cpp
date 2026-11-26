@@ -41,3 +41,15 @@ Commit Repository::createCommit(int parentId,const string& message,const string&
 
     return commit;
 }
+const Commit* Repository::getCommitById(int id) const
+{
+    for (const Commit& commit : commits)
+    {
+        if (commit.getId() == id)
+        {
+            return &commit;
+        }
+    }
+
+    return nullptr;
+}
