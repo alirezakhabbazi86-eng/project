@@ -1,15 +1,21 @@
 #include <iostream>
 #include "Repository.h"
 
+using namespace std;
+
 int main()
 {
     Repository repo;
 
-    std::cout << repo.isInitialized() << std::endl;
-
     repo.init();
 
-    std::cout << repo.isInitialized() << std::endl;
+    repo.createCommit(-1, "First commit", "Ali", "2026-11-26");
+
+    repo.createBranch("main");
+    repo.createBranch("dev");
+    repo.createBranch("student-1");
+
+    repo.listBranches();
 
     return 0;
 }
