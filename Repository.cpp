@@ -1,5 +1,6 @@
 
 #include "Repository.h"
+#include <iostream>
 
 Repository::Repository()
 {
@@ -64,6 +65,12 @@ const Commit* Repository::getLastCommit() const
 }
 void Repository::createBranch(const string& name)
 {
+    if (branchExists(name))
+    {
+        cout << "Branch already exists!" << endl;
+        return;
+    }
+
     const Commit* lastCommit = getLastCommit();
 
     int commitId = -1;
@@ -76,4 +83,18 @@ void Repository::createBranch(const string& name)
     Branch branch(name, commitId);
 
     branches.push_back(branch);
+
+    cout << "Branch created successfully!" << endl;
+}
+bool Repository::branchExists(const string& name) const
+{
+    for (const Branch& branch : branches)
+    {
+        if (branch.getName() == name)
+        {
+            return true;
+        }
+    }
+
+    return false;
 }

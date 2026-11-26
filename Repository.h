@@ -14,6 +14,8 @@ private:
     vector<Commit> commits;
     int nextCommitId;
     vector<Branch>branches;
+    bool branchExists(const string& name) const;
+    Branch* getBranchByName(const string& name);
 
 public:
     Repository();
