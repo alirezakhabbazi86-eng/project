@@ -98,3 +98,15 @@ bool Repository::branchExists(const string& name) const
 
     return false;
 }
+Branch* Repository::getBranchByName(const string& name)
+{
+    for (Branch& branch : branches)
+    {
+        if (branch.getName() == name)
+        {
+            return &branch;
+        }
+    }
+
+    return nullptr;
+}
