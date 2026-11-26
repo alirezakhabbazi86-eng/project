@@ -110,3 +110,12 @@ Branch* Repository::getBranchByName(const string& name)
 
     return nullptr;
 }
+void Repository::listBranches() const
+{
+    cout << "Branches:" << endl;
+
+    for (const Branch& branch : branches)
+    {
+        cout << branch.getName()<< "    Commit ID: "<< branch.getCommitId() << endl;
+    }
+}

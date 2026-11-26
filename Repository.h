@@ -28,6 +28,7 @@ public:
     const Commit* getCommitById(int id) const;
     const Commit* getLastCommit() const;
    void createBranch(const string& name);
+   void listBranches() const;
 };
 
 #endif
