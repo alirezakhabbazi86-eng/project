@@ -25,6 +25,7 @@ public:
     int getCommitCount() const;
     int generateCommitId();
     Commit createCommit(int parentId, const string& message,const string& author,const string& timestamp);
+    Commit createCommit(const string& message,const string& author,const string& timestamp);
     const Commit* getCommitById(int id) const;
     const Commit* getLastCommit() const;
    void createBranch(const string& name);

@@ -50,6 +50,19 @@ Commit Repository::createCommit(int parentId, const string& message, const strin
 
     return commit;
 }
+Commit Repository::createCommit(const string& message, const string& author,const string& timestamp)
+{
+    int parentId = -1;
+
+    Branch* branch = getBranchByName(currentBranch);
+
+    if (branch != nullptr)
+    {
+        parentId = branch->getCommitId();
+    }
+
+    return createCommit(parentId, message, author, timestamp);
+}
 const Commit* Repository::getCommitById(int id) const
 {
     for (const Commit& commit : commits)

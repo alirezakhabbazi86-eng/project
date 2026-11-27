@@ -9,21 +9,20 @@ int main()
 
     repo.init();
 
-    repo.createCommit(-1, "First commit", "Ali", "2026-11-26");
+    repo.createCommit("First commit", "Ali", "2026-11-27");
 
     repo.createBranch("main");
-
     repo.setCurrentBranch("main");
 
-    cout << "Before commit: "
-         << repo.getBranchByName("main")->getCommitId()
-         << endl;
+    repo.createCommit("Second commit", "Ali", "2026-11-27");
 
-    repo.createCommit(1, "Second commit", "Ali", "2026-11-26");
+    const Commit* commit = repo.getLastCommit();
 
-    cout << "After commit: "
-         << repo.getBranchByName("main")->getCommitId()
-         << endl;
+    if (commit != nullptr)
+    {
+        cout << "Commit ID: " << commit->getId() << endl;
+        cout << "Parent ID: " << commit->getParentId() << endl;
+    }
 
     return 0;
 }
