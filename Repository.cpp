@@ -51,7 +51,11 @@ Commit Repository::createCommit(int parentId, const string& message, const strin
     return commit;
 }
 Commit Repository::createCommit(const string& message, const string& author,const string& timestamp)
+{if (currentBranch.empty())
 {
+    cout << "No current branch selected!" << endl;
+    return Commit(-1, -1, "", "", "");
+}
     int parentId = -1;
 
     Branch* branch = getBranchByName(currentBranch);
